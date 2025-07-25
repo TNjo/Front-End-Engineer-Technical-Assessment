@@ -1,11 +1,5 @@
-import ModernWalkHeader from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
+import HomePage from "@/app/home/home-page/HomePage"
 
-export default function Home() {
-  return (
-    <main>
-      <ModernWalkHeader />
-      <Footer />
-    </main>
-  );
+export default function Page() {
+  return <HomePage />
 }
