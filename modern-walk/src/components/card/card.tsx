@@ -1,4 +1,5 @@
 import { memo, useMemo } from 'react'
+import Image from 'next/image'
 import type { Product } from '@/types/product'
 
 interface CardProps {
@@ -78,10 +79,13 @@ const Card = memo(({ product }: CardProps) => {
           left: "30px",
         }}
       >
-        <img
+        <Image
           src={imageSource}
           alt={product.title}
+          width={180}
+          height={120}
           className="max-w-full max-h-full object-contain"
+          priority={false}
         />
       </div>
 

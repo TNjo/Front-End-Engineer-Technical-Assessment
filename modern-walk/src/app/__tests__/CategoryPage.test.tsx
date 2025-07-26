@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import CategoryPage from '../category-page/category-page'
 import type { Product } from '@/types/product'
 
@@ -35,7 +35,9 @@ jest.mock('../../components/card/card', () => {
   }
 })
 
-const mockUseProductsByCategory = require('../../hooks/use-product').useProductsByCategory
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const { useProductsByCategory } = require('../../hooks/use-product')
+const mockUseProductsByCategory = useProductsByCategory
 
 describe('CategoryPage Component', () => {
   beforeEach(() => {
