@@ -28,18 +28,19 @@ This project was developed as part of the interview screening process for front-
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-![Home Page](./screenshots/home-page.png)
+<img width="1650" height="1182" alt="image" src="https://github.com/user-attachments/assets/050fe0ea-b547-4315-a96d-4778301c9db2" />
 *Main landing page showcasing category navigation and flash sale section*
 
 ### 📱 Category Page
-![Category Page](./screenshots/category-page.png)
+<img width="2108" height="1312" alt="image" src="https://github.com/user-attachments/assets/8c6c439e-4929-475f-bc3e-98065b2b9515" />
+<img width="1996" height="1312" alt="image" src="https://github.com/user-attachments/assets/5dec3791-bede-4b6f-a5c2-d1c1c75f6fca" />
 *Category listing page with filtered product listings and navigation*
 
 ### 🛍️ Product Grid
-![Product Grid](./screenshots/product-grid.png)
+<img width="1642" height="750" alt="image" src="https://github.com/user-attachments/assets/34be0943-8f51-4be1-ae32-14116c83f8e3" />
+<img width="618" height="1008" alt="image" src="https://github.com/user-attachments/assets/6a1ac7da-356a-4553-88fa-dd5a0eb15d95" />
+<img width="952" height="1305" alt="image" src="https://github.com/user-attachments/assets/f630670c-862b-4aa0-8844-f275492a89e4" />
 *Responsive product card layout adapting to different screen sizes*
-
-> **📁 Screenshots Location**: Add your application screenshots to the `screenshots/` folder in the project root.
 
 ## ✨ Features
 
