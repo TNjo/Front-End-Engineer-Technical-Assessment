@@ -1,36 +1,232 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Modern Walk - Fashion Retail Web App
 
-## Getting Started
+🚀 **Live Demo**: [https://front-end-engineer-technical-assess.vercel.app/](https://front-end-engineer-technical-assess.vercel.app/)
 
-First, run the development server:
+## 📖 Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Modern Walk is a fashion retail web application prototype built as part of WireApps' front-end engineer technical assessment. This project demonstrates the implementation of a modern e-commerce interface following a provided Figma design, showcasing best practices in React development, responsive design, and user experience.
+
+## 🎯 Assessment Context
+
+This project was developed as part of the interview screening process for front-end software engineers at WireApps. The task involved:
+
+- **Scenario**: Creating a quick prototype for a long-term client's fashion retail app
+- **Objective**: Build a prototype that closely follows the provided Figma design
+- **Requirements**: Implement reusable components for future development phases
+- **Resources**: Modern Walk Figma design and Fake Store API for placeholder data
+
+## 🛠️ Technologies
+
+- **Framework**: [Next.js 15.4.3](https://nextjs.org/) with App Router
+- **Styling**: [Tailwind CSS 4.1.11](https://tailwindcss.com/)
+- **Language**: [TypeScript 5](https://www.typescriptlang.org/)
+- **UI Icons**: [Lucide React](https://lucide.dev/)
+- **Testing**: [Jest](https://jestjs.io/) with [React Testing Library](https://testing-library.com/)
+- **API**: [Fake Store API](https://fakestoreapi.com/)
+- **Deployment**: [Vercel](https://vercel.com/)
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Home Page](./screenshots/home-page.png)
+*Main landing page showcasing category navigation and flash sale section*
+
+### 📱 Category Page
+![Category Page](./screenshots/category-page.png)
+*Category listing page with filtered product listings and navigation*
+
+### 🛍️ Product Grid
+![Product Grid](./screenshots/product-grid.png)
+*Responsive product card layout adapting to different screen sizes*
+
+> **📁 Screenshots Location**: Add your application screenshots to the `screenshots/` folder in the project root.
+
+## ✨ Features
+
+### 🏠 Home Page
+- **Category Navigation**: Interactive category buttons for easy browsing
+- **Flash Sale Section**: Highlighted promotional products
+- **Responsive Grid Layout**: Adapts to different screen sizes
+- **Modern Design**: Clean, minimalist interface following Figma specifications
+
+### 📱 Category Pages
+- **Dynamic Routing**: SEO-friendly URLs for each category
+- **Category-specific Products**: Filtered product listings
+- **Loading States**: Smooth loading experience
+- **Error Handling**: User-friendly error messages
+- **Empty States**: Informative messages when no products are available
+
+### 🛍️ Product Display
+- **Product Cards**: Consistent card design across the application
+- **Product Information**: Title, price, rating, and images
+- **Responsive Design**: Mobile-first approach
+- **Interactive Elements**: Hover effects and smooth transitions
+
+### 🔧 Technical Features
+- **Custom Hooks**: Reusable data fetching with `useProductsByCategory`
+- **State Management**: Efficient loading, error, and data states
+- **Component Architecture**: Modular, reusable components
+- **Type Safety**: Full TypeScript implementation
+- **Testing Coverage**: Comprehensive unit and integration tests
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18.x or later
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd Front-End-Engineer-Technical-Assessment
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   # or
+   bun install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
+
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000) to see the application.
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                          # Next.js App Router
+│   ├── [category]/              # Dynamic category pages
+│   ├── category-page/           # Category page component
+│   ├── home/                    # Home page components
+│   │   ├── category-section/    # Category navigation
+│   │   └── flashsale-section/   # Flash sale display
+│   └── layout.tsx               # Root layout
+├── components/                   # Reusable UI components
+│   ├── button/                  # Category buttons
+│   ├── card/                    # Product cards
+│   ├── layout/                  # Header and Footer
+│   └── state-components/        # Loading, Error, Empty states
+├── hooks/                       # Custom React hooks
+│   └── use-product.ts          # Product data fetching
+└── types/                       # TypeScript type definitions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌐 API Integration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The application uses the [Fake Store API](https://fakestoreapi.com/) for product data:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Base URL**: `https://fakestoreapi.com`
+- **Products Endpoint**: `/products`
+- **Categories Endpoint**: `/products/categories`
+- **Category Products**: `/products/category/{categoryName}`
 
-## Learn More
+### Supported Categories
+- Electronics
+- Jewelry
+- Men's Clothing
+- Women's Clothing
 
-To learn more about Next.js, take a look at the following resources:
+## 🧪 Testing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project includes comprehensive testing setup:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Run tests
+npm run test
 
-## Deploy on Vercel
+# Run tests in watch mode
+npm run test:watch
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Generate coverage report
+npm run test:coverage
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Test Coverage Includes:**
+- Component rendering and interaction
+- Custom hooks functionality
+- API integration
+- Error handling
+- Responsive behavior
+
+## 🎨 Design Implementation
+
+The application implements the provided Figma design with:
+
+- **Color Scheme**: Extracted from Figma specifications
+- **Typography**: Responsive font sizes and weights
+- **Layout**: Grid systems and spacing following design guidelines
+- **Shadows & Effects**: CSS implementations matching Figma styles
+- **Responsive Breakpoints**: Mobile-first approach with tailored experiences
+
+## 📱 Responsive Design
+
+- **Mobile**: 320px - 768px (Single column layout)
+- **Tablet**: 768px - 1024px (2-3 column grid)
+- **Desktop**: 1024px+ (4+ column grid)
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. **Connect your repository** to Vercel
+2. **Configure build settings** (auto-detected for Next.js)
+3. **Deploy** - Vercel handles the rest!
+
+### Manual Deployment
+
+```bash
+# Build the application
+npm run build
+
+# Start production server
+npm run start
+```
+
+## 🔄 Future Enhancements
+
+Based on the assessment requirements, potential next-phase features include:
+
+- **Shopping Cart**: Add to cart functionality
+- **User Authentication**: Login/signup system
+- **Product Details**: Individual product pages
+- **Search Functionality**: Product search and filtering
+- **Wishlist**: Save favorite products
+- **Payment Integration**: Checkout process
+
+## 🤝 Development Guidelines
+
+- **Code Style**: ESLint configuration with Next.js recommended rules
+- **Commit Messages**: Follow conventional commit format
+- **Component Structure**: Prefer composition over inheritance
+- **Testing**: Write tests for new features and components
+- **TypeScript**: Maintain strict type safety
+
+## 📄 License
+
+This project is part of WireApps technical assessment and is intended for evaluation purposes.
+
+## 🙋‍♂️ Support
+
+For questions regarding this assessment or technical implementation, please reach out to the WireApps engineering team.
+
+---
+
+**Built with ❤️ for WireApps Technical Assessment**
