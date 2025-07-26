@@ -7,9 +7,9 @@ export default function CategoryButton({ title, category }: CategoryButtonProps)
   const key = category.trim().toLowerCase()
   const categoryUrl = key.replace(/'/g, "").replace(/\s+/g, "-")
 
-  // only two possibilities:
+  // Use CSS variables: men's clothing gets primary, women's clothing gets secondary
   const isMens = key === "men's clothing"
-  const backgroundColor = isMens ? "#6ee7b7" : "#f472b6"
+  const backgroundColor = isMens ? "var(--color-primary)" : "var(--color-secondary)"
 
   const style: CSSProperties = { backgroundColor }
 
