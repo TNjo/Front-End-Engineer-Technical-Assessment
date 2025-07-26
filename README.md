@@ -80,7 +80,7 @@ This project was developed as part of the interview screening process for front-
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone [<repository-url>](https://github.com/TNjo/Front-End-Engineer-Technical-Assessment.git)
    cd Front-End-Engineer-Technical-Assessment
    ```
 
