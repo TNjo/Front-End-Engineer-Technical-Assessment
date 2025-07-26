@@ -1,13 +1,37 @@
+import { memo, useMemo } from 'react'
 import type { Product } from '@/types/product'
 
 interface CardProps {
   product: Product
 }
 
-export default function Card({ product }: CardProps) {
-  // Product Card Layout - using CSS variables directly
-  const isWomensClothing = product.category === "women's clothing"
-  const bottomBgColor = isWomensClothing ? "var(--color-secondary)" : "var(--color-primary)"
+const Card = memo(({ product }: CardProps) => {
+  // Memoize expensive text truncation calculations
+  const truncatedTitle = useMemo(() => 
+    product.title.length > 50 ? product.title.substring(0, 50) + "..." : product.title,
+    [product.title]
+  );
+
+  const truncatedDescription = useMemo(() =>
+    product.description.length > 80 ? product.description.substring(0, 80) + "..." : product.description,
+    [product.description]
+  );
+
+  // Memoize style calculations
+  const bottomBgColor = useMemo(() => 
+    product.category === "women's clothing" ? "var(--color-secondary)" : "var(--color-primary)",
+    [product.category]
+  );
+
+  const formattedPrice = useMemo(() => 
+    `Rs ${product.price.toFixed(2)}`,
+    [product.price]
+  );
+
+  const imageSource = useMemo(() => 
+    product.image || "/placeholder.svg",
+    [product.image]
+  );
 
   return (
     <article
@@ -40,7 +64,7 @@ export default function Card({ product }: CardProps) {
             color: "#0E0E0E",
           }}
         >
-          {product.title.length > 50 ? product.title.substring(0, 50) + "..." : product.title}
+          {truncatedTitle}
         </h3>
       </div>
 
@@ -55,7 +79,7 @@ export default function Card({ product }: CardProps) {
         }}
       >
         <img
-          src={product.image || "/placeholder.svg"}
+          src={imageSource}
           alt={product.title}
           className="max-w-full max-h-full object-contain"
         />
@@ -94,7 +118,7 @@ export default function Card({ product }: CardProps) {
               color: "#0E42FD",
             }}
           >
-            Rs {product.price.toFixed(2)}
+            {formattedPrice}
           </p>
         </div>
 
@@ -119,10 +143,14 @@ export default function Card({ product }: CardProps) {
               color: "#0E0E0E",
             }}
           >
-            {product.description.length > 80 ? product.description.substring(0, 80) + "..." : product.description}
+            {truncatedDescription}
           </p>
         </div>
       </div>
     </article>
   )
-}
+});
+
+Card.displayName = 'Card';
+
+export default Card;
