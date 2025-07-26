@@ -15,14 +15,12 @@ interface CategoryPageProps {
 export default function CategoryPage({ category }: CategoryPageProps) {
   const { data: products, loading, error } = useProductsByCategory(category)
 
-  // Convert URL format back to display format
   const displayCategory = category.replace("-", " ").replace("mens", "men's").replace("womens", "women's")
   const categoryTitle = displayCategory
     .split(" ")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ")
 
-  // Header component for reuse
   const PageHeader = () => (
     <div className="mb-8">
       <Link href="/" className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-4">

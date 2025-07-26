@@ -25,7 +25,6 @@ export default function FlashSaleSection() {
     <section className="space-y-6">
       <h2 className="text-3xl font-bold tracking-tight text-gray-900">Flash Sale</h2>
 
-      {/* Product Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center">
         {products.map((product) => (
           <Card key={product.id} product={product} />

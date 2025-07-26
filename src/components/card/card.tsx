@@ -8,11 +8,6 @@ interface CardProps {
 
 const Card = memo(({ product }: CardProps) => {
   // Memoize expensive text truncation calculations
-  const truncatedTitle = useMemo(() => 
-    product.title.length > 50 ? product.title.substring(0, 50) + "..." : product.title,
-    [product.title]
-  );
-
   const truncatedDescription = useMemo(() =>
     product.description.length > 80 ? product.description.substring(0, 80) + "..." : product.description,
     [product.description]
@@ -46,26 +41,36 @@ const Card = memo(({ product }: CardProps) => {
     >
       {/* Main Title */}
       <div
-        className="absolute flex items-center justify-center px-2"
+        className="absolute px-2"
         style={{
           width: "220px",
           height: "40px",
           top: "10px",
           left: "10px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         <h3
-          className="text-center leading-tight"
+          className="text-center"
           style={{
             fontFamily: "Roboto",
             fontWeight: 700,
             fontSize: "14px",
-            lineHeight: "1.2",
+            lineHeight: "1.3",
             letterSpacing: "0",
             color: "#0E0E0E",
+            display: "-webkit-box",
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            wordBreak: "break-word",
+            hyphens: "auto",
           }}
         >
-          {truncatedTitle}
+          {product.title}
         </h3>
       </div>
 

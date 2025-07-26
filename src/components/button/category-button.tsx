@@ -3,11 +3,11 @@ import type { CategoryButtonProps } from "@/types/category-button"
 import { CSSProperties } from "react"
 
 export default function CategoryButton({ title, category }: CategoryButtonProps) {
-  // normalize for comparison + URL
+
   const key = category.trim().toLowerCase()
   const categoryUrl = key.replace(/'/g, "").replace(/\s+/g, "-")
 
-  // Use CSS variables: men's clothing gets primary, women's clothing gets secondary
+
   const isMens = key === "men's clothing"
   const backgroundColor = isMens ? "var(--color-primary)" : "var(--color-secondary)"
 

@@ -133,7 +133,6 @@ describe('useFlashSaleProducts Hook', () => {
     })
 
     const data = result.current.data || []
-    // Should have alternating pattern if both categories have items
     expect(data.length).toBeGreaterThan(0)
     
     // Check that we get clothing items only
@@ -149,7 +148,7 @@ describe('useProductsByCategory Hook', () => {
   })
 
   it('should return loading state initially', () => {
-    mockFetch.mockImplementation(() => new Promise(() => {})) // Never resolves
+    mockFetch.mockImplementation(() => new Promise(() => {})) 
     
     const { result } = renderHook(() => useProductsByCategory('men\'s clothing'))
     
@@ -170,7 +169,7 @@ describe('useProductsByCategory Hook', () => {
       expect(result.current.loading).toBe(false)
     })
 
-    expect(result.current.data).toHaveLength(2) // 2 men's clothing items
+    expect(result.current.data).toHaveLength(2) 
     expect(result.current.error).toBeNull()
     
     result.current.data?.forEach(product => {
@@ -190,7 +189,7 @@ describe('useProductsByCategory Hook', () => {
       expect(result.current.loading).toBe(false)
     })
 
-    expect(result.current.data).toHaveLength(2) // 2 women's clothing items
+    expect(result.current.data).toHaveLength(2) 
     expect(result.current.error).toBeNull()
     
     result.current.data?.forEach(product => {
@@ -231,7 +230,6 @@ describe('useProductsByCategory Hook', () => {
 
     expect(result.current.data).toHaveLength(2)
 
-    // Change category
     rerender({ category: 'women\'s clothing' })
 
     await waitFor(() => {

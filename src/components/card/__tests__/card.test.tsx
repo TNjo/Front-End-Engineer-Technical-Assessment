@@ -97,7 +97,6 @@ describe('Card Component', () => {
     render(<Card product={mockProduct} />)
     
     const image = screen.getByAltText('Test Product')
-    // Next.js Image component transforms src URLs, so check if it contains the original URL
     expect(image).toHaveAttribute('src', expect.stringContaining('https%3A%2F%2Fexample.com%2Ftest-image.jpg'))
   })
 }) 

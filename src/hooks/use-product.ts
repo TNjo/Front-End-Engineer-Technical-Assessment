@@ -5,7 +5,7 @@ import type { Product, ApiResponse } from "@/types/product"
 
 const API_BASE_URL = "https://fakestoreapi.com"
 
-// Simple API functions
+// API functions
 const fetchAllProducts = async (): Promise<Product[]> => {
   const response = await fetch(`${API_BASE_URL}/products`)
   if (!response.ok) {
