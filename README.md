@@ -140,8 +140,6 @@ The application uses the [Fake Store API](https://fakestoreapi.com/) for product
 - **Category Products**: `/products/category/{categoryName}`
 
 ### Supported Categories
-- Electronics
-- Jewelry
 - Men's Clothing
 - Women's Clothing
 
